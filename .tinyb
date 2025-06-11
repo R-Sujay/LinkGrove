@@ -1,0 +1,14 @@
+{
+  "host": "https://api.europe-west2.gcp.tinybird.co",
+  "id": "ca6cfb68-7308-49c0-8389-48b36e53e9e3",
+  "name": "linkgrove",
+  "scope": "user",
+  "token": "p.eyJ1IjogImNhNmNmYjY4LTczMDgtNDljMC04Mzg5LTQ4YjM2ZTUzZTllMyIsICJpZCI6ICIwNDE1MGZiNC1mMjNmLTQwYzMtYmNiMi00NzA1ZjRiNjU1YmMiLCAiaG9zdCI6ICJnY3AtZXVyb3BlLXdlc3QyIn0.oZitjhRQGY-U8JgBsAlygknxafERjWDhwV_vAZm7BT4",
+  "tokens": {
+    "https://api.europe-west2.gcp.tinybird.co": "p.eyJ1IjogImNhNmNmYjY4LTczMDgtNDljMC04Mzg5LTQ4YjM2ZTUzZTllMyIsICJpZCI6ICIwNDE1MGZiNC1mMjNmLTQwYzMtYmNiMi00NzA1ZjRiNjU1YmMiLCAiaG9zdCI6ICJnY3AtZXVyb3BlLXdlc3QyIn0.oZitjhRQGY-U8JgBsAlygknxafERjWDhwV_vAZm7BT4"
+  },
+  "user_email": "sujay.rajesh08@gmail.com",
+  "user_id": "9f705fb8-1a09-4e04-adb1-2483e1190a71",
+  "user_token": "p.eyJ1IjogIjlmNzA1ZmI4LTFhMDktNGUwNC1hZGIxLTI0ODNlMTE5MGE3MSIsICJpZCI6ICIyOGJmYjVjZC1mNzE1LTQyYjUtODgzNC0wYWI2NmIyNDE4ZTkiLCAiaG9zdCI6ICJnY3AtZXVyb3BlLXdlc3QyIn0.MjsA42HiFHrgR05VYh70REx8r4L2pyeEfI_t6HlikGM",
+  "version": "0.0.1.dev212"
+}
