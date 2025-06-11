@@ -2,7 +2,7 @@
 
 import { api } from "@/convex/_generated/api";
 import { Preloaded, useMutation, usePreloadedQuery } from "convex/react";
-import React, { use, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   DndContext,
   closestCenter,
@@ -10,6 +10,7 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
+  DragEndEvent,
 } from "@dnd-kit/core";
 import {
   arrayMove,
@@ -32,12 +33,12 @@ function ManageLinks({
   const updateLinkOrder = useMutation(api.lib.links.updateLinkOrder);
   const [items, setItems] = useState(links.map((link) => link._id));
 
-  const handleDragEnd = (event: any) => {
+  const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
     if (active.id !== over?.id) {
       setItems((items) => {
         const oldIndex = items.indexOf(active.id as Id<"links">);
-        const newIndex = items.indexOf(over.id as Id<"links">);
+        const newIndex = items.indexOf(over?.id as Id<"links">);
 
         const newItems = arrayMove(items, oldIndex, newIndex);
         updateLinkOrder({ linkIds: newItems });

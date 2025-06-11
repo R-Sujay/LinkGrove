@@ -11,7 +11,7 @@ import {
   FormMessage,
 } from "./ui/form";
 import { z } from "zod";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
@@ -58,7 +58,7 @@ function CreateLinkForm() {
         });
 
         router.push("/dashboard");
-      } catch (err) {
+      } catch {
         setError("Failed to create link. Please try again.");
       }
     });

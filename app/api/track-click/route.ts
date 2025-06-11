@@ -2,7 +2,6 @@ import { api } from "@/convex/_generated/api";
 import { getClient } from "@/convex/client";
 import { ClientTrackingData, ServerTrackingEvent } from "@/lib/types";
 import { geolocation } from "@vercel/functions";
-import { useConvex } from "convex/react";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
