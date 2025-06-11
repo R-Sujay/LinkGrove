@@ -85,7 +85,7 @@ function DashboardMetrics({ analytics }: { analytics: AnalyticsData }) {
             </div>
 
             <Protect
-              feature="ultra"
+              plan="ultra"
               fallback={
                 <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 opacity-75">
                   <div className="flex items-center justify-between mb-4">
