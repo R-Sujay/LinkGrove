@@ -58,7 +58,7 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "Content Creator",
     content:
-      "Linkify transformed how I share my content. The analytics help me understand what my audience loves most!",
+      "LinkGrove transformed how I share my content. The analytics help me understand what my audience loves most!",
     rating: 5,
   },
   {
@@ -180,7 +180,7 @@ h-auto"
               Loved by Creators
             </h2>
             <p className="text-xl text-gray-600">
-              See what our users are saying about Linkify
+              See what our users are saying about LinkGrove
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -221,7 +221,7 @@ h-auto"
               Ready to Get Started?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Join thousands of creators who trust Linkify to showcase their
+              Join thousands of creators who trust LinkGrove to showcase their
               content. Create your beautiful link page in minutes, not hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -231,7 +231,7 @@ h-auto"
                 className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8 py-6 h-auto font-semibold"
               >
                 <Link href="/dashboard" className="flex items-center gap-2">
-                  Create Your Linkify
+                  Create Your LinkGrove
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
@@ -255,7 +255,7 @@ h-auto"
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
-              <div className="text-2xl font-bold text-gray-900">Linkify</div>
+              <div className="text-2xl font-bold text-gray-900">LinkGrove</div>
               <p className="text-gray-600">
                 The easiest way to share all your important links in one
                 beautiful page.

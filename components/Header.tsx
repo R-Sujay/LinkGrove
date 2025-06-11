@@ -21,7 +21,7 @@ function Header({ isFixed = false }: { isFixed?: boolean }) {
 items-center"
       >
         <Link href="/dashboard" className="text-2xl font-bold">
-          Linkify
+          LinkGrove
         </Link>
 
         <Authenticated>

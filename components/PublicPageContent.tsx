@@ -94,7 +94,7 @@ function PublicPageContent({
               className="hover:underline"
               style={{ color: accentColor }}
             >
-              Linkify
+              LinkGrove
             </Link>
           </p>
         </div>
