@@ -3,6 +3,8 @@ import "./globals.css";
 import ConvexClientProvider from "@/components/ConvexClientProvider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
+import { Poppins } from "next/font/google";
+import localFont from "next/font/local";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,6 +14,43 @@ export const metadata: Metadata = {
   },
 };
 
+const myFont = localFont({
+  src: [
+    {
+      path: "../public/fonts/Satoshi/Satoshi-Variable.woff2",
+      weight: "100 900", // Define the variable font weight range
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Satoshi/Satoshi-Variable.woff",
+      weight: "100 900",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Satoshi/Satoshi-Variable.ttf",
+      weight: "100 900",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Satoshi/Satoshi-VariableItalic.woff2",
+      weight: "100 900",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/Satoshi/Satoshi-VariableItalic.woff",
+      weight: "100 900",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/Satoshi/Satoshi-VariableItalic.ttf",
+      weight: "100 900",
+      style: "italic",
+    },
+  ],
+  display: "swap",
+  variable: "--font-poppins",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -19,7 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${myFont.variable} antialiased`}>
         <ClerkProvider dynamic>
           <ConvexClientProvider>{children}</ConvexClientProvider>
         </ClerkProvider>

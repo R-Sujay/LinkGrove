@@ -49,7 +49,7 @@ async function AddNewLinkPage() {
               </Link>
               {!hasUnlimitedLinks && (
                 <Link
-                  href="/dashboard/billing"
+                  href="/billing"
                   className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors"
                 >
                   Upgrade Plan

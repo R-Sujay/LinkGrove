@@ -75,7 +75,7 @@ async function LinkAnalytics({ analytics }: { analytics: LinkAnalyticsData }) {
                 and Ultra plans
               </p>
               <Link
-                href="/dashboard/billing"
+                href="/billing"
                 className="inline-block mt-4 px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
               >
                 Upgrade Now

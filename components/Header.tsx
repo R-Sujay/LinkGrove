@@ -6,22 +6,22 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
 import { SignInButton, UserButton } from "@clerk/clerk-react";
-import { cn } from "@/lib/utils";
+import { AuroraText } from "./magicui/aurora-text";
 
-function Header({ isFixed = false }: { isFixed?: boolean }) {
+function Header() {
   return (
-    <header
-      className={cn(
-        "bg-white/88 backdrop-blur-sm border-b border-white/20 shadow-sm",
-        isFixed && "sticky top-0 z-50",
-      )}
-    >
-      <div
-        className="max-w-7xl mx-auto px-4 xl:px-2 py-4 flex justify-between 
-items-center"
-      >
-        <Link href="/dashboard" className="text-2xl font-bold">
-          LinkGrove
+    <header className="pt-2">
+      <div className="max-w-7xl mx-auto px-4 xl:px-2 py-4 flex justify-between items-center font-poppins font-extrabold">
+        <div className="hidden sm:flex items-center h-full gap-3 md:gap-10 text-gray-900">
+          <Link href="/dashboard" className="text-xl">
+            Dashboard
+          </Link>
+          <Link href="/billing" className="text-xl">
+            Billing
+          </Link>
+        </div>
+        <Link href="/" className="sm:text-3xl text-2xl text-center font-[900]">
+          <AuroraText>LinkGrove</AuroraText>
         </Link>
 
         <Authenticated>
@@ -36,9 +36,9 @@ items-center"
             <Button
               asChild
               variant="outline"
-              className="border-purple-600 text-purple-600 hover:border-purple-700 hover:bg-purple-600 hover:text-white transition-all duration-200"
+              className="border-purple-600 text-purple-600 hover:border-purple-700 hover:bg-purple-600 hover:text-white transition-all duration-200 "
             >
-              <Link href="/dashboard/billing">Billing</Link>
+              <Link href="/billing">Billing</Link>
             </Button>
             <UserButton />
           </div>
@@ -48,9 +48,9 @@ items-center"
           <SignInButton mode="modal">
             <Button
               variant="outline"
-              className="border-purple-600 text-purple-600 hover:border-purple-700 hover:bg-purple-600 hover:text-white transition-all duration-200"
+              className="bg-purple-600 hover:bg-purple-700 rounded-full py-5 : md:px-6 text-lg text-white hover:text-white transition-all duration-200 font-extrabold"
             >
-              Get Started for Free
+              Get Started <span className="hidden md:inline">for Free</span>
             </Button>
           </SignInButton>
         </Unauthenticated>
