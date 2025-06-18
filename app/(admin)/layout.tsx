@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import { ClerkLoaded } from "@clerk/clerk-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

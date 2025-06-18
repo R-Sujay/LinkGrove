@@ -2,6 +2,8 @@ import { Star } from "lucide-react";
 import React from "react";
 import { TestimonialsColumn } from "@/components/TestimonialColumn";
 import { motion } from "motion/react";
+import { LineShadowText } from "./magicui/line-shadow-text";
+import { AnimatedGroup } from "./AnimatedGroup";
 
 const testimonials = [
   {
@@ -79,14 +81,21 @@ function Testimonial() {
       <div className="container z-10 mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Loved by Creators
+            Loved by{" "}
+            <span className="relative bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent z-50 bg-black">
+              Creators
+            </span>
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 font-semibold">
             See what our users are saying about LinkGrove
           </p>
         </div>
 
-        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
+        <AnimatedGroup
+          duration={3}
+          onScroll
+          className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden"
+        >
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
           <TestimonialsColumn
             testimonials={secondColumn}
@@ -98,7 +107,7 @@ function Testimonial() {
             className="hidden lg:block"
             duration={17}
           />
-        </div>
+        </AnimatedGroup>
       </div>
     </section>
   );

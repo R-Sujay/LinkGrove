@@ -8,10 +8,12 @@ import { Button } from "./ui/button";
 import { SignInButton, UserButton } from "@clerk/clerk-react";
 import { AuroraText } from "./magicui/aurora-text";
 
+const myList = ["Home", "About", "Services", "Team", "Portfolio", "Content"];
+
 function Header() {
   return (
     <header className="pt-2">
-      <div className="max-w-7xl mx-auto px-4 xl:px-2 py-4 flex justify-between items-center font-poppins font-extrabold">
+      <div className="max-w-7xl mx-auto px-4 xl:px-2 py-4 flex justify-between items-center font-satoshi font-extrabold">
         <div className="hidden sm:flex items-center h-full gap-3 md:gap-10 text-gray-900">
           <Link href="/dashboard" className="text-xl">
             Dashboard
@@ -20,7 +22,7 @@ function Header() {
             Billing
           </Link>
         </div>
-        <Link href="/" className="sm:text-3xl text-2xl text-center font-[900]">
+        <Link href="/" className="sm:text-3xl text-2xl text-center font-black">
           <AuroraText>LinkGrove</AuroraText>
         </Link>
 

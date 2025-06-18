@@ -1,50 +1,18 @@
-import React from "react";
 import { LineShadowText } from "@/components/magicui/line-shadow-text";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button"; // Corrected import path for shadcn/ui button
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { TextEffect } from "@/components/TextEffect";
 import { AnimatedGroup } from "@/components/AnimatedGroup";
-
-const transitionVariants = {
-  item: {
-    hidden: {
-      opacity: 0,
-      filter: "blur(12px)",
-      y: 12,
-    },
-    visible: {
-      opacity: 1,
-      filter: "blur(0px)",
-      y: 0,
-      transition: {
-        type: "spring" as const,
-        bounce: 0.3,
-        duration: 1.5,
-      },
-    },
-  },
-};
+import { InteractiveHoverButton } from "./magicui/interactive-hover-button";
 
 function Hero() {
   return (
-    <section className="py-20 max-w-7xl mx-auto flex lg:py-32">
-      <div className="flex flex-col justify-center pr-10">
-        <AnimatedGroup
-          variants={{
-            container: {
-              visible: {
-                transition: {
-                  delayChildren: 0,
-                  staggerChildren: 0.1,
-                },
-              },
-            },
-            ...transitionVariants,
-          }}
-        >
-          <h1 className="text-xl font-poppins lg:text-[88px] font-bold text-gray-900 leading-28">
+    <section className="py-10 max-w-7xl mx-auto flex flex-col xl:flex-row xl:py-32 px-4 sm:px-6 xl:px-8">
+      <div className="flex flex-col justify-center items-center text-center xl:pr-10 xl:items-start xl:text-left">
+        <AnimatedGroup duration={1.5}>
+          <h1 className="text-4xl font-satoshi sm:text-5xl md:text-6xl lg:text-[88px] font-bold text-gray-900 leading-tight lg:leading-28">
             One <LineShadowText shadowColor="black">Link</LineShadowText>,
             <br />
             <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent z-50">
@@ -58,30 +26,32 @@ function Hero() {
             </span>
           </h1>
 
-          <TextEffect
-            per="line"
-            preset="fade-in-blur"
-            speedSegment={0.3}
-            delay={0}
-            as="p"
-            className="text-xl pt-5 lg:text-xl text-gray-600 font-poppins font-semibold max-w-2xl leading-relaxed"
-          >
+          <p className="text-base pt-5 sm:text-lg md:text-xl text-gray-600 font-satoshi font-semibold max-w-2xl mx-auto lg:mx-0 lg:max-w-2xl leading-relaxed">
             Create a beautiful, customizable link-in-bio page that showcases all
             your important links. Perfect for creators, businesses, and anyone
             who wants to share multiple links effortlessly.
-          </TextEffect>
+          </p>
           <div className="pt-5 mb-2">
             <p className="text-sm text-gray-500 mb-2">
               Trusted by 10,000+ creators worldwide
             </p>
-            <div className="flex gap-8 opacity-60">
-              <div className="text-2xl font-bold text-gray-400">Creator</div>
-              <div className="text-2xl font-bold text-gray-400">Business</div>
-              <div className="text-2xl font-bold text-gray-400">Influencer</div>
-              <div className="text-2xl font-bold text-gray-400">Artist</div>
+
+            <div className="hidden sm:flex gap-8 justify-center xl:justify-start opacity-60">
+              <div className="text-xl font-bold text-gray-400 sm:text-2xl">
+                Creator
+              </div>
+              <div className="text-xl font-bold text-gray-400 sm:text-2xl">
+                Business
+              </div>
+              <div className="text-xl font-bold text-gray-400 sm:text-2xl">
+                Influencer
+              </div>
+              <div className="text-xl font-bold text-gray-400 sm:text-2xl">
+                Artist
+              </div>
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row gap-8 justify-start items-center pt-5">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center pt-5 xl:justify-start">
             <Button
               asChild
               size="lg"
@@ -91,42 +61,27 @@ function Hero() {
                 href="/dashboard"
                 className="flex justify-center items-center gap-2"
               >
-                <span className="text-lg font-poppins font-extrabold">
+                <span className="text-lg font-satoshi font-extrabold">
                   Start Building Free
                 </span>
                 <ArrowRight className="" />
               </Link>
             </Button>
-            <Button
-              asChild
-              size="lg"
-              className="px-6 py-3 h-auto rounded-full bg-blue-950"
-            >
+            <InteractiveHoverButton className="px-6 py-3 h-auto rounded-full">
               <Link href="#features" className="flex items-center gap-2">
-                <span className="text-lg font-poppins font-extrabold">
+                <span className="text-lg font-satoshi font-extrabold">
                   See How It Works
                 </span>
               </Link>
-            </Button>
+            </InteractiveHoverButton>
           </div>
         </AnimatedGroup>
       </div>
-
       <AnimatedGroup
-        variants={{
-          container: {
-            visible: {
-              transition: {
-                staggerChildren: 0.02,
-                delayChildren: 0,
-              },
-            },
-          },
-          ...transitionVariants,
-        }}
-        className="flex-1 flex justify-center items-center"
+        duration={1.5}
+        className="hidden xl:flex flex-1 justify-center items-center mt-8 lg:mt-0"
       >
-        <div className="w-full">
+        <div className="w-full max-w-lg">
           <Image
             src="/heroImage.svg"
             alt="Hero Image"

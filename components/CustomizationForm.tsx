@@ -243,7 +243,7 @@ function CustomizationForm() {
                 onChange={(e) =>
                   handleInputChange("accentColor", e.target.value)
                 }
-                className="w-12 h-12 rounded-lg border-2 border-gray-300 cursor-pointer"
+                className="w-12 h-12 rounded-lg border-2 border-gray-300"
               />
               <div>
                 <p className="text-sm font-medium text-gray-700">

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-const myFont = localFont({
+const satoshi = localFont({
   src: [
     {
       path: "../public/fonts/Satoshi/Satoshi-Variable.woff2",
@@ -48,7 +48,7 @@ const myFont = localFont({
     },
   ],
   display: "swap",
-  variable: "--font-poppins",
+  variable: "--font-satoshi",
 });
 
 export default function RootLayout({
@@ -58,7 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${myFont.variable} antialiased`}>
+      <body className={`${satoshi.variable} antialiased`}>
         <ClerkProvider dynamic>
           <ConvexClientProvider>{children}</ConvexClientProvider>
         </ClerkProvider>

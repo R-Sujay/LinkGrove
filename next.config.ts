@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "reliable-jaguar-315.convex.cloud" },
+      { protocol: "https", hostname: "cdn.sanity.io" },
     ],
   },
 };

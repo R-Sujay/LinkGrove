@@ -48,7 +48,7 @@ export const TestimonialsColumn = (props: TestimonialProps) => {
                         />
                       ))}
                     </div>
-                    <div>{text}</div>
+                    <p className="font-semibold">"{text}"</p>
                     <div className="flex items-center gap-2 mt-5">
                       <img
                         width={40}
@@ -58,10 +58,10 @@ export const TestimonialsColumn = (props: TestimonialProps) => {
                         className="h-10 w-10 rounded-full"
                       />
                       <div className="flex flex-col">
-                        <div className="font-medium tracking-tight leading-5">
+                        <div className="font-bold tracking-tight leading-5">
                           {name}
                         </div>
-                        <div className="leading-5 opacity-60 tracking-tight">
+                        <div className="leading-5 font-semibold opacity-60 tracking-tight">
                           {role}
                         </div>
                       </div>
