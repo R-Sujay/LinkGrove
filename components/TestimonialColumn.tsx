@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Star } from "lucide-react";
-import Image from "next/image";
 
 type TestimonialProps = {
   className?: string;
