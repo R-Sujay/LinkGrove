@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Star } from "lucide-react";
+import Image from "next/image";
 
 type TestimonialProps = {
   className?: string;
@@ -48,9 +49,9 @@ export const TestimonialsColumn = (props: TestimonialProps) => {
                         />
                       ))}
                     </div>
-                    <p className="font-semibold">"{text}"</p>
+                    <p className="font-semibold">&quot;{text}&quot;</p>
                     <div className="flex items-center gap-2 mt-5">
-                      <img
+                      <Image
                         width={40}
                         height={40}
                         src={image}

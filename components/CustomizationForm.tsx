@@ -69,7 +69,6 @@ function CustomizationForm() {
       toast.error("Please select an image file");
       return;
     }
-    // Validate file size (max 5MB)
     if (file.size > 5 * 1024 * 1024) {
       toast.error("File size must be less than 5MB");
       return;
@@ -95,8 +94,8 @@ function CustomizationForm() {
 
         await updateCustomizations({
           profilePictureStorageId: storageId,
-          //   description: formData.description || undefined,
-          //     accentColor: formData.accentColor || undefined,
+          description: formData.description || undefined,
+          accentColor: formData.accentColor || undefined,
         });
 
         toast.success("Profile picture updated successfully!");
@@ -105,7 +104,7 @@ function CustomizationForm() {
         toast.error("Failed to upload image");
       } finally {
         if (fileInputRef.current) {
-          fileInputRef.current.value = ""; // Reset file input
+          fileInputRef.current.value = "";
         }
       }
     });

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode, useMemo, useRef, ComponentType } from "react";
+import React, { ReactNode, useRef } from "react";
 import { motion, useInView, Variants, MotionProps } from "framer-motion";
 
 export type PresetType =
@@ -15,15 +15,11 @@ export type PresetType =
   | "rotate"
   | "swing";
 
-export type AnimatedGroupProps<
-  T extends keyof React.JSX.IntrinsicElements = "div",
-> = {
+export type AnimatedGroupProps = {
   children: ReactNode;
   className?: string;
   duration?: number;
   preset?: PresetType;
-  as?: T;
-  asChild?: keyof React.JSX.IntrinsicElements;
   onScroll?: boolean;
 } & MotionProps;
 
@@ -33,24 +29,6 @@ const defaultContainerVariants: Variants = {
     transition: {
       delayChildren: 0,
       staggerChildren: 0.1,
-    },
-  },
-};
-
-const defaultItemVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    filter: "blur(12px)",
-    y: 12,
-  },
-  visible: {
-    opacity: 1,
-    filter: "blur(0px)",
-    y: 0,
-    transition: {
-      type: "spring" as const,
-      bounce: 0.3,
-      duration: 1.5, // default duration
     },
   },
 };
@@ -137,29 +115,32 @@ const addDefaultVariants = (variants: Variants, duration: number = 1.5) => ({
       type: "spring" as const,
       bounce: 0.3,
       duration: duration,
-      ...((variants.visible as any)?.transition || {}),
+      ...(((variants.visible as Record<string, unknown>)?.transition as Record<
+        string,
+        unknown
+      >) || {}),
     },
   },
 });
 
-const AnimatedGroup = React.forwardRef<HTMLElement, AnimatedGroupProps>(
+const AnimatedGroup = React.forwardRef<HTMLDivElement, AnimatedGroupProps>(
   (
     {
       children,
       className,
       duration = 1.5,
       preset,
-      as = "div",
-      asChild = "div",
       onScroll = false,
       ...motionProps
     },
     ref,
   ) => {
-    const localRef = useRef<HTMLElement>(null);
-    const combinedRef = (ref as React.RefObject<HTMLElement>) ?? localRef;
+    const localRef = useRef<HTMLDivElement>(null);
+    const combinedRef = ref ?? localRef;
 
-    const isInView = useInView(combinedRef, { once: true });
+    const isInView = useInView(combinedRef as React.RefObject<Element>, {
+      once: true,
+    });
 
     const selectedVariants = {
       item: addDefaultVariants(preset ? presetVariants[preset] : {}, duration),
@@ -169,11 +150,8 @@ const AnimatedGroup = React.forwardRef<HTMLElement, AnimatedGroupProps>(
     const containerVariants = selectedVariants.container;
     const itemVariants = selectedVariants.item;
 
-    const MotionComponent = useMemo(() => motion(as as any), [as]);
-    const MotionChild = useMemo(() => motion(asChild as any), [asChild]);
-
     return (
-      <MotionComponent
+      <motion.div
         ref={combinedRef}
         variants={containerVariants}
         initial="hidden"
@@ -182,11 +160,11 @@ const AnimatedGroup = React.forwardRef<HTMLElement, AnimatedGroupProps>(
         {...motionProps}
       >
         {React.Children.map(children, (child, index) => (
-          <MotionChild key={index} variants={itemVariants}>
+          <motion.div key={index} variants={itemVariants}>
             {child}
-          </MotionChild>
+          </motion.div>
         ))}
-      </MotionComponent>
+      </motion.div>
     );
   },
 );

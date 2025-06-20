@@ -1,8 +1,5 @@
-import { Star } from "lucide-react";
 import React from "react";
 import { TestimonialsColumn } from "@/components/TestimonialColumn";
-import { motion } from "motion/react";
-import { LineShadowText } from "./magicui/line-shadow-text";
 import { AnimatedGroup } from "./AnimatedGroup";
 
 const testimonials = [

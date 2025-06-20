@@ -5,14 +5,17 @@ import { Doc } from "@/convex/_generated/dataModel";
 import { trackLinkClick } from "@/lib/analytics";
 import { Preloaded, usePreloadedQuery } from "convex/react";
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React from "react";
 
 function Links({
   preloadedLinks,
+  accentColor,
 }: {
   preloadedLinks: Preloaded<typeof api.lib.links.getLinksBySlug>;
+  accentColor: string;
 }) {
   const links = usePreloadedQuery(preloadedLinks);
   const params = useParams();
@@ -46,13 +49,19 @@ function Links({
       {links?.map((link, index) => (
         <Link
           key={link._id}
-          href={link.url}
+          href={`${link.url}?utm_source=linkgrove&utm_medium=profile&utm_campaign=${username}`}
           target="_blank"
           className="group block w-full"
           style={{ animationDelay: `${index * 50}ms` }}
           onClick={() => handleLinkClick(link)}
         >
-          <div className="relative bg-white/70 hover:bg-white/90 border border-slate-200/50 hover:border-slate-300/50 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-slate-900/5 hover:-translate-y-0.5">
+          <motion.div
+            transition={{ duration: 0.03 }}
+            whileHover={{
+              borderLeftColor: accentColor,
+            }}
+            className="relative border group-hover:border-l-[20px] border-slate-200/50 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+          >
             {/* Subtle hover gradient */}
             <div className="absolute inset-e bg-gradient-to-r from-blue-50/0 via-purple-50/0 to-blue-50/0 group-hover:from-blue-50/30 group-hover:via-purple-50/20 group-hover:to-blue-50/30 rounded-2xl transition-all duration-300"></div>
             <div className="relative flex items-center justify-between">
@@ -68,7 +77,7 @@ function Links({
                 <ArrowUpRight className="w-5 h-5" />
               </div>
             </div>
-          </div>
+          </motion.div>
         </Link>
       ))}
     </div>

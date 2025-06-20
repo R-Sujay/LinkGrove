@@ -1,6 +1,5 @@
 import { Geo } from "@vercel/functions";
 
-// Client-side data that gets sent from the browser
 export interface ClientTrackingData {
   profileUsername: string;
   linkId: string;

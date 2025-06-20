@@ -3,7 +3,6 @@ import "./globals.css";
 import ConvexClientProvider from "@/components/ConvexClientProvider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
-import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
 
 export const metadata: Metadata = {
@@ -18,7 +17,7 @@ const satoshi = localFont({
   src: [
     {
       path: "../public/fonts/Satoshi/Satoshi-Variable.woff2",
-      weight: "100 900", // Define the variable font weight range
+      weight: "100 900",
       style: "normal",
     },
     {

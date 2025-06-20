@@ -57,6 +57,8 @@ function SortableItem({ id, link }: { id: Id<"links">; link: Doc<"links"> }) {
           title: editTitle.trim(),
           url: processedUrl,
         });
+        setEditTitle(editTitle.trim());
+        setEditUrl(processedUrl);
         setIsEditing(false);
 
         toast.success("Link updated successfully!");

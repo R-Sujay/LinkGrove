@@ -8,12 +8,10 @@ import { Button } from "./ui/button";
 import { SignInButton, UserButton } from "@clerk/clerk-react";
 import { AuroraText } from "./magicui/aurora-text";
 
-const myList = ["Home", "About", "Services", "Team", "Portfolio", "Content"];
-
 function Header() {
   return (
     <header className="pt-2">
-      <div className="max-w-7xl mx-auto px-4 xl:px-2 py-4 flex justify-between items-center font-satoshi font-extrabold">
+      <div className="max-w-7xl mx-auto px-12 py-4 flex justify-between items-center font-satoshi font-extrabold">
         <div className="hidden sm:flex items-center h-full gap-3 md:gap-10 text-gray-900">
           <Link href="/dashboard" className="text-xl">
             Dashboard
@@ -27,10 +25,10 @@ function Header() {
         </Link>
 
         <Authenticated>
-          <div className="flex gap-2 items-center bg-white/50 backdrop-blur-sm border border-white/20 p-2 rounded-lg">
+          <div className="flex gap-5 items-center bg-white/50 backdrop-blur-sm border border-white/20 rounded-lg">
             <Link
               href="/dashboard/new-link"
-              className="inline-flex items-center gap-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-2 rounded-lg font-medium hover:from-blue-600 hover:to-purple-780 transition-all duration-200"
+              className="inline-flex items-center gap-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-2 rounded-lg font-bold hover:from-blue-600 hover:to-purple-780 transition-all duration-200"
             >
               <Plus className="w-4 h-4" />
               Add Link
@@ -38,7 +36,7 @@ function Header() {
             <Button
               asChild
               variant="outline"
-              className="border-purple-600 text-purple-600 hover:border-purple-700 hover:bg-purple-600 hover:text-white transition-all duration-200 "
+              className="border-purple-600 px-5 py-[19px] font-bold text-purple-600 hover:border-purple-700 hover:bg-purple-600 hover:text-white transition-all duration-200 text-base size52"
             >
               <Link href="/billing">Billing</Link>
             </Button>

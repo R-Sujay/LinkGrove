@@ -10,7 +10,7 @@ export const getUserCustomizations = query({
       _creationTime: v.number(),
       userId: v.string(),
       profilePictureStorageId: v.optional(v.id("_storage")),
-      profilePictureUrl: v.optional(v.string()), // Computed field for the actual URL
+      profilePictureUrl: v.optional(v.string()),
       description: v.optional(v.string()),
       accentColor: v.optional(v.string()),
     }),

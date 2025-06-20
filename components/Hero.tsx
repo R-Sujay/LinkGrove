@@ -1,9 +1,8 @@
 import { LineShadowText } from "@/components/magicui/line-shadow-text";
-import { Button } from "@/components/ui/button"; // Corrected import path for shadcn/ui button
+import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { TextEffect } from "@/components/TextEffect";
 import { AnimatedGroup } from "@/components/AnimatedGroup";
 import { InteractiveHoverButton } from "./magicui/interactive-hover-button";
 
@@ -26,7 +25,7 @@ function Hero() {
             </span>
           </h1>
 
-          <p className="text-base pt-5 sm:text-lg md:text-xl text-gray-600 font-satoshi font-semibold max-w-2xl mx-auto lg:mx-0 lg:max-w-2xl leading-relaxed">
+          <p className="text-base pt-5 sm:text-lg md:text-xl text-gray-600 font-satoshi font-semibold max-w-2xl mx-auto lg:mx-0 leading-relaxed">
             Create a beautiful, customizable link-in-bio page that showcases all
             your important links. Perfect for creators, businesses, and anyone
             who wants to share multiple links effortlessly.

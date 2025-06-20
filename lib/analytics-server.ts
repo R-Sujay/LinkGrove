@@ -34,6 +34,7 @@ export async function fetchAnalytics(
           Authorization: `Bearer ${process.env.TINYBIRD_TOKEN}`,
         },
         next: { revalidate: 0 }, // Cache for 0 seconds
+        cache: "no-store",
       },
     );
 

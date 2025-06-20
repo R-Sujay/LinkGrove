@@ -7,7 +7,7 @@ SQL >
     SELECT 
         profileUserId, 
         any(profileUsername) as profileUsername, 
-        count() as totat_clicks, 
+        count() as total_clicks, 
         uniq(profileUserId) as unique_users, 
         uniq(linkId) as total_links_clicked, 
         uniq(location_country) as countries_reached, 

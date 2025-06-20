@@ -3,8 +3,8 @@ import { v } from "convex/values";
 
 export default defineSchema({
   usernames: defineTable({
-    userId: v.string(), // clerk user ID
-    username: v.string(), // custom username (unique)
+    userId: v.string(),
+    username: v.string(),
   })
     .index("by_user_id", ["userId"])
     .index("by_username", ["username"]),
@@ -19,9 +19,9 @@ export default defineSchema({
     .index("by_user_and_order", ["userId", "order"]),
 
   userCustomizations: defineTable({
-    userId: v.string(), // clerk user ID
-    profilePictureStorageId: v.optional(v.id("_storage")), // Convex storage ID for profile picture
-    description: v.optional(v.string()), // URL for the profile picture
-    accentColor: v.optional(v.string()), // Hex color code for accent color
+    userId: v.string(),
+    profilePictureStorageId: v.optional(v.id("_storage")),
+    description: v.optional(v.string()),
+    accentColor: v.optional(v.string()),
   }).index("by_user_id", ["userId"]),
 });

@@ -93,11 +93,6 @@ function UsernameForm() {
     }
   };
 
-  // Determine the status of the username input:
-  // - Returns null if username is empty or too short
-  // - Returns "checking" if username is being debounced or availability is being checked
-  // - Returns "current" if username matches the user's current slug
-  // - Returns "available" or "unavailable" based on availability check result
   const getStatus = () => {
     if (!debouncedUsername || debouncedUsername.length < 3) return null;
     if (debouncedUsername != watchedUsername) return "checking";

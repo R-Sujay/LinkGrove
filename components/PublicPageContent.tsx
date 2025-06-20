@@ -80,7 +80,10 @@ function PublicPageContent({
 
           <div className="flex-1 min-w-0">
             <div className="bg-white/90 backdrop-blur-xl border border-white/20 rounded-3xl p-8 lg:p-10 shadow-xl">
-              <Links preloadedLinks={preloadedLinks} />
+              <Links
+                accentColor={accentColor}
+                preloadedLinks={preloadedLinks}
+              />
             </div>
           </div>
         </div>

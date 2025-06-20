@@ -151,12 +151,11 @@ export async function fetchLinkAnalytics(
       totalClicks,
       uniqueUsers,
       countriesReached,
-      dailyData: dailyData.reverse(), // Most recent first
+      dailyData: dailyData.reverse(),
       countryData,
     };
   } catch (tinybirdError) {
     console.error("Tinybird error:", tinybirdError);
-    // Return null on error
     return null;
   }
 }
