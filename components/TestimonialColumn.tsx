@@ -50,21 +50,13 @@ export const TestimonialsColumn = (props: TestimonialProps) => {
                       ))}
                     </div>
                     <p className="font-semibold">&quot;{text}&quot;</p>
-                    <div className="flex items-center gap-2 mt-5">
-                      <Image
-                        width={40}
-                        height={40}
-                        src={image}
-                        alt={name}
-                        className="h-10 w-10 rounded-full"
-                      />
-                      <div className="flex flex-col">
-                        <div className="font-bold tracking-tight leading-5">
-                          {name}
-                        </div>
-                        <div className="leading-5 font-semibold opacity-60 tracking-tight">
-                          {role}
-                        </div>
+
+                    <div className="flex flex-col mt-5">
+                      <div className="font-bold tracking-tight leading-5">
+                        {name}
+                      </div>
+                      <div className="leading-5 font-semibold opacity-60 tracking-tight">
+                        {role}
                       </div>
                     </div>
                   </div>
