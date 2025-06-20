@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "LinkGrove Admin",
-  description: "Admin dashboard for managing links",
+  title: "LinkGrove",
+  description:
+    "Linkgrove lets users create and manage a personalized bio page with multiple links, track engagement in real time, and upgrade to premium tiers for advanced customization and analytics.",
 };
 
 export default function PublicLinkinBioLayout({
