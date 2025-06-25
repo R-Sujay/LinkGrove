@@ -11,13 +11,14 @@ async function AddNewLinkPage() {
 
   const hasTenLinkCapacity = has({ feature: "pro_capacity" });
   const hasUnlimitedLinks = has({ feature: "ultra_capacity" });
+  console.log(hasUnlimitedLinks);
 
   const linkCount = await fetchQuery(api.lib.links.getLinkCountByUserId, {
     userId: userId || "",
   });
 
   const access = {
-    canCreate: hasTenLinkCapacity
+    canCreate: hasUnlimitedLinks
       ? true
       : hasTenLinkCapacity
         ? linkCount < 10
