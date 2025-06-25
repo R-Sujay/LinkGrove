@@ -12,6 +12,26 @@ export const metadata: Metadata = {
   icons: {
     icon: "/convex.svg",
   },
+  openGraph: {
+    title: "LinkGrove",
+    description:
+      "Linkgrove lets users create and manage a personalized bio page with multiple links, track engagement in real time, and upgrade to premium tiers for advanced customization and analytics.",
+    url: "https://link-grove-rsujays-projects.vercel.app",
+    siteName: "LinkGrove",
+    type: "website",
+    images: [
+      {
+        url: "/heroImage.svg",
+        width: 1200,
+        height: 630,
+        alt: "LinkGrove - Create your personalized bio page",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 const satoshi = localFont({
