@@ -28,6 +28,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "LinkGrove",
+    description:
+      "Linkgrove lets users create and manage a personalized bio page with multiple links, track engagement in real time, and upgrade to premium tiers for advanced customization and analytics.",
+    images: ["/heroImage.svg"],
+  },
   robots: {
     index: true,
     follow: true,
