@@ -28,6 +28,7 @@ function HeroImage() {
       <Lottie
         animationData={HeroImageAnimation}
         loop={true}
+        height={350}
         className="absolute bottom-0 w-full h-[83%]"
       />
     </div>
