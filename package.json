@@ -25,6 +25,7 @@
     "clsx": "^2.1.1",
     "convex": "^1.23.0",
     "framer-motion": "^12.18.1",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.511.0",
     "motion": "^12.18.1",
     "next": "^15.2.3",

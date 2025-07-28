@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { AnimatedGroup } from "@/components/AnimatedGroup";
 import { InteractiveHoverButton } from "./magicui/interactive-hover-button";
+import HeroImage from "./HeroImage";
 
 function Hero() {
   return (
@@ -81,13 +82,7 @@ function Hero() {
         className="hidden xl:flex flex-1 justify-center items-center mt-8 lg:mt-0"
       >
         <div className="w-full max-w-lg">
-          <Image
-            src="/heroImage.svg"
-            alt="Hero Image"
-            width={600}
-            height={400}
-            className="w-full h-auto object-contain"
-          />
+          <HeroImage />
         </div>
       </AnimatedGroup>
     </section>
