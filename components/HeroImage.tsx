@@ -8,7 +8,6 @@ import HeroImageAnimation from "@/public/HeroImageAnimation.json";
 function HeroImage() {
   return (
     <div className="h-[600] w-[400]">
-      {/* <div className="absolute top-0 w-40 h-20"> */}
       <div className="w-full h-20 absolute">
         <Image
           src="/Social Icons.png"
@@ -17,7 +16,6 @@ function HeroImage() {
           height={200}
           className="w-full h-28 object-contain"
         />
-        {/* </div> */}
       </div>
 
       <Image
@@ -30,7 +28,7 @@ function HeroImage() {
       <Lottie
         animationData={HeroImageAnimation}
         loop={true}
-        className="absolute bottom-0 w-full h-10/12"
+        className="absolute bottom-0 w-full h-[83%]"
       />
     </div>
   );
