@@ -7,8 +7,8 @@ import HeroImageAnimation from "@/public/HeroImageAnimation.json";
 
 function HeroImage() {
   return (
-    <div className="h-[600] w-[400]">
-      <div className="w-full h-20 absolute">
+    <div className="relative h-[310px] w-[400px]">
+      <div className="w-full h-20 absolute z-10">
         <Image
           src="/Social Icons.png"
           alt="Social Icons"
@@ -29,7 +29,7 @@ function HeroImage() {
         animationData={HeroImageAnimation}
         loop={true}
         height={350}
-        className="absolute bottom-0 w-full h-[83%]"
+        className="absolute bottom-0 w-full h-[200px]"
       />
     </div>
   );
