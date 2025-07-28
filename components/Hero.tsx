@@ -2,7 +2,6 @@ import { LineShadowText } from "@/components/magicui/line-shadow-text";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { AnimatedGroup } from "@/components/AnimatedGroup";
 import { InteractiveHoverButton } from "./magicui/interactive-hover-button";
 import HeroImage from "./HeroImage";
